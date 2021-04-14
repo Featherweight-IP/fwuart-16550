@@ -134,6 +134,7 @@
 // CAUTION: doesn't work with current version of OR1200
 //`define DATA_BUS_WIDTH_8
 
+`define DATA_BUS_WIDTH_8
 `ifdef DATA_BUS_WIDTH_8
  `define UART_ADDR_WIDTH 3
  `define UART_DATA_WIDTH 8

@@ -5,6 +5,7 @@ ifneq (1,$(RULES))
 
 ifeq (,$(findstring $(FWUART_16550_RTLDIR),$(MKDV_INCLUDED_DEFS)))
 MKDV_INCLUDED_DEFS += $(FWUART_16550_RTLDIR)
+include $(PACKAGES_DIR)/fwprotocol-defs/verilog/rtl/defs_rules.mk
 MKDV_VL_INCDIRS += $(FWUART_16550_RTLDIR)
 MKDV_VL_SRCS += $(wildcard $(FWUART_16550_RTLDIR)/*.v)
 endif

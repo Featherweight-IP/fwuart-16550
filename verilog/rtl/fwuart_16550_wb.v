@@ -140,6 +140,7 @@ module fwuart_16550_wb(
 	input reset,
 	
 	// Wishbone signals
+	// Comes in as a 32-bit bus
 	`WB_TARGET_PORT(rt_, 5, 32),
 	
 	output 		irq, // interrupt request
@@ -200,18 +201,18 @@ wire	[3:0] rstate;
 ////  WISHBONE interface module
 uart_wb		wb_interface(
 		.clk(		clock		),
-		.reset(	reset	),
-	.rt_dat_w(rt_dat_w),
-	.rt_dat_r(rt_dat_r),
+		.wb_rst_i(	reset	),
+	.wb_dat_i(rt_dat_w),
+	.wb_dat_o(rt_dat_r),
 	.wb_dat8_i(wb_dat8_i),
 	.wb_dat8_o(wb_dat8_o),
 	 .wb_dat32_o(32'b0),								 
-	 .rt_sel(4'b0),
-		.rt_we(	rt_we		),
-		.rt_stb(	rt_stb	),
-		.rt_cyc(	rt_cyc	),
-		.rt_ack(	rt_ack	),
-	.rt_adr(rt_adr),
+	 .wb_sel_i(4'b0),
+		.wb_we_i(	rt_we		),
+		.wb_stb_i(	rt_stb	),
+		.wb_cyc_i(	rt_cyc	),
+		.wb_ack_o(	rt_ack	),
+	.wb_adr_i(rt_adr[4:2]),
 	.wb_adr_int(wb_adr_int),
 		.we_o(		we_o		),
 		.re_o(re_o)
