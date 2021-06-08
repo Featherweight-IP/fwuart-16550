@@ -390,6 +390,7 @@ uart_transmitter transmitter(clk, wb_rst_i, lcr, tf_push, wb_dat_i, enable, seri
 // handle loopback
 wire serial_in = loopback ? serial_out : srx_pad;
 assign stx_pad_o = loopback ? 1'b1 : serial_out;
+wire rf_overrun, rf_push_pulse;
 
 // Receiver Instance
 uart_receiver receiver(clk, wb_rst_i, lcr, rf_pop, serial_in, enable, 
