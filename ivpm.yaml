@@ -1,0 +1,29 @@
+package:
+    name: fwuart-16550
+    version: None
+    deps:
+        - name: fwprotocol-defs
+          url: https://github.com/Featherweight-IP/fwprotocol-defs.git
+          type: raw
+    dev-deps:
+        - name: fwprotocol-defs
+          url: https://github.com/Featherweight-IP/fwprotocol-defs.git
+          type: raw
+        - name: cocotb
+          type: python
+          src: pypi
+        - name: vlsim
+          type: python
+          src: pypi
+        - name: pybfms
+          url: https://github.com/pybfms/pybfms.git
+          type: python
+        - name: pybfms-wishbone
+          url: https://github.com/pybfms/pybfms-wishbone.git
+          type: python
+        - name: pybfms-uart
+          url: https://github.com/pybfms/pybfms-uart.git
+          type: python
+        - name: mkdv
+          url: ssh://git@github.com/fvutils/mkdv.git
+          type: python
